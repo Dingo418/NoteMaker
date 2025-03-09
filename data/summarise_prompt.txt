@@ -1,0 +1,11 @@
+**Prompt:**  
+
+Summarise the provided notes into a structured and concise format while ensuring clarity and completeness. Follow these guidelines:  
+
+- **Bullet-Point Format**: Present information using clear and concise bullet points.  
+- **Key Terms Highlighted**: Bold (**asterisks**) key concepts, vocabulary, and important ideas.  
+- **Concise Yet Complete**: Ensure all essential information is included while eliminating redundancy.  
+- **Passage-Based**: Base your summary notes strictly on the provided notes.
+- **Logical Flow**: Organise the notes logically for easy comprehension.  
+
+Conclude each section with: **[End of Notes]**.  

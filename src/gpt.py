@@ -1,0 +1,52 @@
+import config
+from openai import OpenAI
+
+configValues = config.config
+
+def get_system_prompt() -> str:
+    """Gets the system prompt from data/noteprompt"""
+    content = ""
+    with open(config.ROOT_DIR + '/data/note_prompt.txt', 'r') as file:
+        content = file.read()
+    return content
+
+def openAi(given_text : str) -> str:
+    """Connects to openAI and yoinks the response to the prompts"""
+    response = ""
+    client = OpenAI(api_key=config.OPENAI_API_KEY )
+    completion = client.chat.completions.create(
+        model=configValues['PREFERENCES']['openAIModel'],
+        store=True,
+        messages=[{
+            "role": "system",
+                "content": [
+                    {
+                        "type"  : "text",
+                        "text"  : get_system_prompt()
+                    }
+                ] 
+            },
+            {"role": "user", 
+                "content": [
+                    {
+                        "type"  : "text",
+                        "text"  : given_text
+                    }
+                ]
+            }
+        ]
+    )
+    
+    response = completion.choices[0].message.content
+    return response
+
+    
+def getGPT(given_text : str) -> str:
+    """Figures out which LLM-Provider to use"""
+    response = ""
+    match configValues['PREFERENCES']['provider']:
+        case "openai":
+            response = openAi(given_text)
+        case _:
+            raise ValueError("WTF give me the right provider")
+    return response
