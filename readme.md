@@ -1,7 +1,7 @@
 # Notes Generator
 
 A Python-based tool for converting files into notes by processing the content with GPT. The program takes a file (either `.txt` or `.wav`), processes it into smaller chunks, sends these chunks to GPT for note creation, and exports the results into a markdown file. STILL IN DEVELOPMENT.
-
++yt+dlp needs fmpg? so linux figure it out
 ## Features
 
 - Handles both `.txt` and `.wav` files.

@@ -10,7 +10,7 @@
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal",
-            "args": "input_example.txt"
+            "args": "https://www.youtube.com/watch?v=rrB13utjYV4"
         }
     ]
 }

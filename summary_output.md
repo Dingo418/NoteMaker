@@ -1,59 +1,46 @@
-### Overview of Computer Science
-- **Definition**: Study of **computation**, **information**, and **automation**.
-- **Disciplines**: 
-  - **Theoretical**: Algorithms, theory of computation, information theory.
-  - **Applied**: Design and implementation of hardware/software.
+- **Onex Overview**:
+  - **Created**: 1991 by **Linus Torvalds**, a University of Helsinki student.
+  - **Type**: **Open-source operating system**.
+  - **Objective**: To develop a **free version** of the **Unix operating system**.
+  - **Current Usage**: 
+    - Powers most **web servers** and various **mobile devices**.
+    - Recognized as the top choice for **personal computers**.
+    
+- **Distributions (Distros)**:
+  - Includes multiple varieties like **Ubuntu** and **Fedora** that operate similarly to **Windows**.
 
-- **Core Elements**:
-  - **Algorithms** and **data structures** are fundamental.
-  - **Theory of computation**: Deals with abstract models and problem-solving classes.
-  - **Cryptography** and **computer security**: Focus on secure communication and vulnerability prevention.
-  - **Computer graphics** and **computational geometry**: Involved in image generation.
-  - **Programming language theory**: Describes computational processes.
-  - **Database theory**: Pertains to data repository management.
-  - **Human-computer interaction**: Studies interfaces between humans and computers.
-  - **Software engineering**: Principles and design for software development.
-  - **Operating systems** and **networks**: Underpin complex systems.
-  - **Computer architecture**: Focus on computer component construction.
-  - **Artificial intelligence** and **machine learning**: Emphasize problem-solving and learning processes.
-    - **Computer vision**: Analyzes image/video data.
-    - **Natural language processing**: Interprets textual data.
+- **Operating System Functions**:
+  - **Manages**: 
+    - Computer **memory** 
+    - System **processes**.
+  - Facilitates communication between **hardware** and **software**.
 
-- **Fundamental Concern**: Exploration of what can and cannot be **automated**.
-- **Turing Award**: Most prestigious award in computer science.
+- **Kernel**:
+  - **Definition**: Core component of the OS.
+  - **Structure**: 
+    - Divided into smaller **subsystems** (e.g., **process scheduler**, **device drivers**).
+  - **Function**: Interfaces with user applications via the **system call interface**.
 
-[End of Notes]
+- **Applications**:
+  - Enhance usability for users.
+  - Includes:
+    - **Shell** for terminal command interaction with the kernel.
+    - Desktop applications and development tools.
 
----
+- **Terminal**:
+  - Starting point for user interaction, typically in **home/** directory.
+  - Common Commands:
+    - **cd**: Navigate to root directory.
+    - **ls**: List all subdirectories.
 
-### History of Computer Science
-- **Founders**: 
-  - **Gottfried Wilhelm Leibniz**: Innovator of binary number system; considered the "founder of computer science."
-  - **Charles Babbage**: Known as the "father of computing."
-  - **Ada Lovelace**: Recognized for authoring the first algorithm for computers.
+- **File Management**:
+  - **Creating Files**: Use the **touch** command.
+  - **Reading Files**: Use **cat** command.
+  - **Checking File**: Size and permissions with **du** and **ls -l** commands.
+  - **Changing Ownership**: Use **chown** command for permission adjustments.
 
-- **Historical Foundations**: 
-  - Early calculating devices, such as the **abacus**, trace back to ancient times.
+- **Installing Software**:
+  - May need **superuser** privileges.
+  - Utilize package managers (e.g., **apt** for Debian-based systems) for installation and maintenance.
 
-- **Key Developments**:
-  - **Wilhelm Schickard**: Created the first operational mechanical calculator (1623).
-  - **Gottfried Leibniz**: Revolutionized calculations with the Stepped Reckoner (1673).
-  - **Thomas de Colmar**: Advanced mechanical calculators for industrial use (1820).
-  - **Charles Babbage**: 
-    - Initiated the design of the **Difference Engine** (1822).
-    - Developed the **Analytical Engine** (1834) with a **punched card system** for programmability.
-  - **Ada Lovelace**: Published the first algorithm (Bernoulli numbers, 1843).
-  - **Herman Hollerith**: Created the tabulator using punched cards for statistical data.
-
-- **Subsequent Innovations**:
-  - **Leonardo Torres Quevedo**: Developed a theoretical electromechanical calculating machine (1914).
-  - **Howard Aiken**: Constructed the ASCC/Harvard Mark I (1937), building on Babbage's ideas.
-
-- **1940s and Beyond**:
-  - Introduction of advanced machines like the **Atanasoff-Berry Computer** and **ENIAC**, which redefined the term 'computer'.
-  - 1945: Establishment of IBM's Watson Scientific Computing Laboratory.
-  - Emergence of computer science as a unique academic field in the **1950s**.
-  - **Cambridge Diploma in Computer Science**: The world's first CS degree (1953).
-  - **Purdue University**: Launched the first computer science department in the U.S. (1962).
-
-[End of Notes]
+- **Quick Tip**: Always verify correct permissions when operating and installing software to prevent issues.

@@ -160,5 +160,6 @@ cython_debug/
 #.idea/
 
 # Extra vscode stuff
-.venv
-.vscode
+.vscode/
+/.vscode
+.vscode/launch.json

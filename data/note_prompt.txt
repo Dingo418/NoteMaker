@@ -2,7 +2,7 @@ Please take notes in the established format as you continue.
 
 - **Bullet-Point Notes**: Create concise, easy-to-understand bullet-point notes.
 - **Highlight Key Terms**: Use **asterisks** to bold vocabulary terms and key concepts.
-- **Focus on Essentials**: Remove extraneous language and emphasize critical aspects.
+- **Focus on Essentials**: Remove extraneous language but keep all information from the passage
 - **Passage-Based**: Base your notes strictly on the provided passages.
 - **Inclusion of Information**: Do not exclude any information. Ensure all passage content is in the notes.
 

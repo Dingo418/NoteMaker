@@ -3,6 +3,7 @@ import gpt
 import argparse
 import converter
 from pathlib import Path
+import yt_dlp
 
 configValues = config.config
 
@@ -51,6 +52,22 @@ def get_text(file_path : Path) -> str:
             raise ValueError(f"Unsupported file extension: {file_extension}") 
     return text
 
+def get_youtube(URL : str) -> None:
+    ydl_opts = {
+        'format': 'm4a/bestaudio/best',
+        'postprocessors': [{  
+            'key': 'FFmpegExtractAudio',
+            'preferredcodec': 'wav',
+        }],
+        'outtmpl': str(Path("data/temp_audio"))
+    }
+
+    with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+        error_code = ydl.download(URL)
+    
+    if error_code != 0:
+        raise ValueError("youtube-dl error: ", error_code)
+
 def main() -> None:
     """Main routine"""
     parser = argparse.ArgumentParser(description="The one stop program to creates notes out of anything!")
@@ -69,8 +86,13 @@ def main() -> None:
     args = parser.parse_args()
     output_path_note = Path("notes_" + args.output)
     output_path_summary = Path( "summary_" + args.output)
-    file_path = Path(args.filename)
     will_summaries = bool(configValues['PREFERENCES']['will_summarise'])
+
+    if "https://www.youtube.com/watch?v=" in args.filename:
+        get_youtube(args.filename)
+        file_path = Path("data/temp_audio.wav")
+    else:
+        file_path = Path(args.filename)
 
     print("Recieving all the text from the file", file_path.name)
     text = get_text(file_path)
