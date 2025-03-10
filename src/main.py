@@ -4,10 +4,12 @@ import argparse
 import converter
 from pathlib import Path
 
+configValues = config.config
+
 def split_up(text : str) -> list:
-    """Splits the text up into 75 sentence long prompts and adds them to a list"""
+    """Splits the text up into X sentences long prompts and adds them to a list"""
     chunks = []
-    max_sentences = 75
+    max_sentences = int(configValues['PREFERENCES']['max_sentences'])
     sentences = text.split(".")
 
     for i in range(0, len(sentences), max_sentences):
@@ -27,12 +29,12 @@ def export_md(response : list, output_path : Path) -> None:
     with open(output_path, 'a') as file:
         file.write("".join(response))
 
-def gpt_process(text : str) -> list:
+def gpt_process(text : str, system_prompt_path : Path) -> list:
     """Sends chunks to the GPT Processes and collates the response"""
     responses = []
     chunks = split_up(text)
     for i,chunk in enumerate(chunks):
-        responses.append(gpt.getGPT(chunk))
+        responses.append(gpt.getGPT(chunk, system_prompt_path))
         print(f"Chunk {i} has been proccessed.")
 
     return responses
@@ -63,18 +65,28 @@ def main() -> None:
         type=str, 
         help="The file to process")
     
+    
     args = parser.parse_args()
-    output_path = Path(args.output)
+    output_path_note = Path("notes_" + args.output)
+    output_path_summary = Path( "summary_" + args.output)
     file_path = Path(args.filename)
+    will_summaries = bool(configValues['PREFERENCES']['will_summarise'])
 
     print("Recieving all the text from the file", file_path.name)
     text = get_text(file_path)
 
     print("A GPT is now processing the information")
-    responses = gpt_process(text)
+    responses = gpt_process(text, Path("data/note_prompt.txt"))
 
-    print("The responses are now getting exported")
-    export_md(responses, output_path)
+    print("The note responses are now getting exported")
+    export_md(responses, output_path_note)
+    
+    if will_summaries:
+        print("The GPT is now summarising the complete notes")
+        responses = gpt_process("".join(responses), Path("data/summarise_prompt.txt"))
+
+        print("The note responses are now getting exported")
+        export_md(responses, output_path_summary)
 
 if __name__ == "__main__":
     main()

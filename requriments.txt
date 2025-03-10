@@ -1,4 +1,3 @@
 pocketsphinx
 SpeechRecognition
 openai
-venv

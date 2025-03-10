@@ -1,19 +1,20 @@
 import config
+from pathlib import Path
 from openai import OpenAI
 
 configValues = config.config
 
-def get_system_prompt() -> str:
+def get_system_prompt(system_prompt_path : Path) -> str:
     """Gets the system prompt from data/noteprompt"""
     content = ""
-    with open(config.ROOT_DIR + '/data/note_prompt.txt', 'r') as file:
+    with open(system_prompt_path, 'r') as file:
         content = file.read()
     return content
 
-def openAi(given_text : str) -> str:
+def openAi(given_text : str, system_prompt_path : Path) -> str:
     """Connects to openAI and yoinks the response to the prompts"""
     response = ""
-    client = OpenAI(api_key=config.OPENAI_API_KEY )
+    client = OpenAI(api_key=config.OPENAI_API_KEY)
     completion = client.chat.completions.create(
         model=configValues['PREFERENCES']['openAIModel'],
         store=True,
@@ -22,7 +23,7 @@ def openAi(given_text : str) -> str:
                 "content": [
                     {
                         "type"  : "text",
-                        "text"  : get_system_prompt()
+                        "text"  : get_system_prompt(system_prompt_path)
                     }
                 ] 
             },
@@ -41,12 +42,12 @@ def openAi(given_text : str) -> str:
     return response
 
     
-def getGPT(given_text : str) -> str:
+def getGPT(given_text : str, system_prompt_path : Path) -> str:
     """Figures out which LLM-Provider to use"""
     response = ""
     match configValues['PREFERENCES']['provider']:
         case "openai":
-            response = openAi(given_text)
+            response = openAi(given_text, system_prompt_path)
         case _:
             raise ValueError("WTF give me the right provider")
     return response
