@@ -3,7 +3,7 @@ import gpt
 import argparse
 import converter
 from pathlib import Path
-import yt_dlp
+
 
 configValues = config.config
 
@@ -37,36 +37,35 @@ def gpt_process(text : str, system_prompt_path : Path) -> list:
     for i,chunk in enumerate(chunks):
         responses.append(gpt.getGPT(chunk, system_prompt_path))
         print(f"Chunk {i} has been proccessed.")
+        if i > 2:
+            break
+
 
     return responses
 
 def get_text(file_path : Path) -> str:
     """Figure out what kind of file it is and gets it's text"""
+
+    #Special case if it is a youtube video needs work
+    if "youtube.com" in str(file_path):
+        youtube_url = str(file_path)
+        youtube_url = "https://" + youtube_url[7:] #when converting from path, the \\ turns into \. This is a quick fix
+        converter.get_youtube(youtube_url)
+        print("Youtube video has been converted to wav:")
+        file_path = Path("data/temp_audio.wav")
+
     file_extension = file_path.suffix
     match file_extension:
         case ".txt":
             text = get_text_from_file(file_path)
         case ".wav":
+            print("Warning, this may take a while if it is a big file.")
             text = converter.speech_to_text(file_path)
+        case ".pptx":
+            text = converter.extract_text_from_pptx(file_path)
         case _:
             raise ValueError(f"Unsupported file extension: {file_extension}") 
     return text
-
-def get_youtube(URL : str) -> None:
-    ydl_opts = {
-        'format': 'm4a/bestaudio/best',
-        'postprocessors': [{  
-            'key': 'FFmpegExtractAudio',
-            'preferredcodec': 'wav',
-        }],
-        'outtmpl': str(Path("data/temp_audio"))
-    }
-
-    with yt_dlp.YoutubeDL(ydl_opts) as ydl:
-        error_code = ydl.download(URL)
-    
-    if error_code != 0:
-        raise ValueError("youtube-dl error: ", error_code)
 
 def main() -> None:
     """Main routine"""
@@ -87,12 +86,7 @@ def main() -> None:
     output_path_note = Path("notes_" + args.output)
     output_path_summary = Path( "summary_" + args.output)
     will_summaries = bool(configValues['PREFERENCES']['will_summarise'])
-
-    if "https://www.youtube.com/watch?v=" in args.filename:
-        get_youtube(args.filename)
-        file_path = Path("data/temp_audio.wav")
-    else:
-        file_path = Path(args.filename)
+    file_path = Path(args.filename)
 
     print("Recieving all the text from the file", file_path.name)
     text = get_text(file_path)
@@ -103,7 +97,7 @@ def main() -> None:
     print("The note responses are now getting exported")
     export_md(responses, output_path_note)
     
-    if will_summaries:
+    if will_summaries == "True": # I know, the ini returns strings
         print("The GPT is now summarising the complete notes")
         responses = gpt_process("".join(responses), Path("data/summarise_prompt.txt"))
 
