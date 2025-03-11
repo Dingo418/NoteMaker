@@ -1,4 +1,108 @@
-he history of computer science began long before the modern discipline of computer science, usually appearing in forms like mathematics or physics. Developments in previous centuries alluded to the discipline that we now know as computer science.[1] This progression, from mechanical inventions and mathematical theories towards modern computer concepts and machines, led to the development of a major academic field, massive technological advancement across the Western world, and the basis of a massive worldwide trade and culture.[2]
+
+
+Wikipedia The Free Encyclopedia
+
+    Donate
+    Create account
+    Log in
+
+Banner logo
+
+Wikimania 2025 Program Proposals are now open!
+Click here to Apply Now
+This application is open until Monday 31st March, 2025 end of day
+[ Help with translations! ]
+Contents
+(Top)
+Prehistory
+
+Binary logic
+
+    Gottfried Wilhelm Leibniz
+
+Emergence of a discipline
+
+    Charles Babbage and Ada Lovelace
+    Early post-Analytical Engine designs
+    Charles Sanders Peirce and electrical switching circuits
+    Alan Turing and the Turing machine
+    Kathleen Booth and the first assembly language
+    Early computer hardware
+    Shannon and information theory
+    Wiener and cybernetics
+    John von Neumann and the von Neumann architecture
+    John McCarthy, Marvin Minsky and artificial intelligence
+
+See also
+
+References
+
+        Sources
+    Further reading
+    External links
+
+History of computer science
+
+    Article
+    Talk
+
+    Read
+    Edit
+    View history
+
+Tools
+
+Appearance
+Text
+
+    Small
+    Standard
+    Large
+
+Width
+
+    Standard
+    Wide
+
+Color (beta)
+
+    Automatic
+    Light
+    Dark
+
+From Wikipedia, the free encyclopedia
+History of computing
+Hardware
+
+    Hardware 1960s to present
+
+Software
+
+    Software Software configuration management Unix Free software and open-source software
+
+Computer science
+
+    Artificial intelligence Compiler construction Early computer science Operating systems Programming languages Prominent pioneers Software engineering
+
+Modern concepts
+
+    General-purpose CPUs Graphical user interface Internet Laptops Personal computers Video games World Wide Web Cloud Quantum
+
+By country
+
+    Bulgaria Eastern Bloc Poland Romania South America Soviet Union Yugoslavia
+
+Timeline of computing
+
+    before 1950 1950–1979 1980–1989 1990–1999 2000–2009 2010–2019 2020–present more timelines ...
+
+Glossary of computer science
+
+    Category
+
+    vte
+
+The history of computer science began long before the modern discipline of computer science, usually appearing in forms like mathematics or physics. Developments in previous centuries alluded to the discipline that we now know as computer science.[1] This progression, from mechanical inventions and mathematical theories towards modern computer concepts and machines, led to the development of a major academic field, massive technological advancement across the Western world, and the basis of a massive worldwide trade and culture.[2]
 Prehistory
 John Napier (1550–1617), the inventor of logarithms
 
@@ -16,4 +120,251 @@ When John Napier discovered logarithms for computational purposes in the early 1
 
 In 1837 Charles Babbage first described his Analytical Engine which is accepted as the first design for a modern computer. The analytical engine had expandable memory, an arithmetic unit, and logic processing capabilities able to interpret a programming language with loops and conditional branching. Although never built, the design has been studied extensively and is understood to be Turing equivalent. The analytical engine would have had a memory capacity of less than 1 kilobyte of memory and a clock speed of less than 10 Hertz.[18]
 
-Considerable advancement in mathematics and electronics theory was required before the first modern computers could be designed. 
+Considerable advancement in mathematics and electronics theory was required before the first modern computers could be designed.
+Binary logic
+Gottfried Wilhelm Leibniz
+Main article: Gottfried Wilhelm Leibniz
+Gottfried Wilhelm Leibniz (1646–1716) developed logic in a binary number system and has been called the "founder of computer science".[19]
+
+In 1702, Gottfried Wilhelm Leibniz developed logic in a formal, mathematical sense with his writings on the binary numeral system. Leibniz simplified the binary system and articulated logical properties such as conjunction, disjunction, negation, identity, inclusion, and the empty set.[20] He anticipated Lagrangian interpolation and algorithmic information theory. His calculus ratiocinator anticipated aspects of the universal Turing machine. In 1961, Norbert Wiener suggested that Leibniz should be considered the patron saint of cybernetics.[21] Wiener is quoted with "Indeed, the general idea of a computing machine is nothing but a mechanization of Leibniz's Calculus Ratiocinator."[22] But it took more than a century before George Boole published his Boolean algebra in 1854 with a complete system that allowed computational processes to be mathematically modeled.[23]
+
+By this time, the first mechanical devices driven by a binary pattern had been invented. The Industrial Revolution had driven forward the mechanization of many tasks, and this included weaving. Punched cards controlled Joseph Marie Jacquard's loom in 1801, where a hole punched in the card indicated a binary one and an unpunched spot indicated a binary zero. Jacquard's loom was far from being a computer, but it did illustrate that machines could be driven by binary systems and stored binary information.[23]
+Emergence of a discipline
+Charles Babbage (1791–1871), one of the pioneers of computing
+Charles Babbage and Ada Lovelace
+Main articles: Charles Babbage and Ada Lovelace
+
+Charles Babbage is often regarded as one of the first pioneers of computing. Beginning in the 1810s, Babbage had a vision of mechanically computing numbers and tables. Putting this into reality, Babbage designed a calculator to compute numbers up to 8 decimal points long. Continuing with the success of this idea, Babbage worked to develop a machine that could compute numbers with up to 20 decimal places. By the 1830s, Babbage had devised a plan to develop a machine that could use punched cards to perform arithmetical operations. The machine would store numbers in memory units, and there would be a form of sequential control. This means that one operation would be carried out before another in such a way that the machine would produce an answer and not fail. This machine was to be known as the "Analytical Engine", which was the first true representation of what is the modern computer.[24]
+Ada Lovelace (1815–1852) predicted the use of computers in symbolic manipulation
+
+Ada Lovelace (Augusta Ada Byron) is credited as the pioneer of computer programming and is regarded as a mathematical genius. Lovelace began working with Charles Babbage as an assistant while Babbage was working on his "Analytical Engine", the first mechanical computer. [25] During her work with Babbage, Ada Lovelace became the designer of the first computer algorithm, which could compute Bernoulli numbers,[26] although this is arguable as Charles was the first to design the difference engine and consequently its corresponding difference based algorithms, making him the first computer algorithm designer. Moreover, Lovelace's work with Babbage resulted in her prediction of future computers to not only perform mathematical calculations but also manipulate symbols, mathematical or not.[27] While she was never able to see the results of her work, as the "Analytical Engine" was not created in her lifetime, her efforts in later years, beginning in the 1840s, did not go unnoticed.[28]
+Early post-Analytical Engine designs
+Leonardo Torres Quevedo (1852–1936) proposed a consistent manner to store floating-point numbers
+
+Following Babbage, although at first unaware of his earlier work, was Percy Ludgate, a clerk to a corn merchant in Dublin, Ireland. He independently designed a programmable mechanical computer, which he described in a work that was published in 1909.[29][30]
+
+Two other inventors, Leonardo Torres Quevedo and Vannevar Bush, also did follow on research based on Babbage's work. In his Essays on Automatics (1914), Torres designed an analytical electromechanical machine that was controlled by a read-only program and introduced the idea of floating-point arithmetic.[31][32][33] In 1920, to celebrate the 100th anniversary of the invention of the arithmometer, he presented in Paris the Electromechanical Arithmometer, which consisted of an arithmetic unit connected to a (possibly remote) typewriter, on which commands could be typed and the results printed automatically.[34] Bush's paper Instrumental Analysis (1936) discussed using existing IBM punch card machines to implement Babbage's design. In the same year he started the Rapid Arithmetical Machine project to investigate the problems of constructing an electronic digital computer.[35]
+Charles Sanders Peirce and electrical switching circuits
+Charles Sanders Peirce (1839–1914) described how logical operations could be carried out by electrical switching circuits
+
+In an 1886 letter, Charles Sanders Peirce described how logical operations could be carried out by electrical switching circuits.[36] During 1880–81 he showed that NOR gates alone (or alternatively NAND gates alone) can be used to reproduce the functions of all the other logic gates, but this work on it was unpublished until 1933.[37] The first published proof was by Henry M. Sheffer in 1913, so the NAND logical operation is sometimes called Sheffer stroke; the logical NOR is sometimes called Peirce's arrow.[38] Consequently, these gates are sometimes called universal logic gates.[39]
+
+Eventually, vacuum tubes replaced relays for logic operations. Lee De Forest's modification, in 1907, of the Fleming valve can be used as a logic gate. Ludwig Wittgenstein introduced a version of the 16-row truth table as proposition 5.101 of Tractatus Logico-Philosophicus (1921). Walther Bothe, inventor of the coincidence circuit, got part of the 1954 Nobel Prize in physics, for the first modern electronic AND gate in 1924. Konrad Zuse designed and built electromechanical logic gates for his computer Z1 (from 1935 to 1938).
+
+Up to and during the 1930s, electrical engineers were able to build electronic circuits to solve mathematical and logic problems, but most did so in an ad hoc manner, lacking any theoretical rigor. This changed with switching circuit theory in the 1930s. From 1934 to 1936, Akira Nakashima, Claude Shannon, and Viktor Shetakov published a series of papers showing that the two-valued Boolean algebra, can describe the operation of switching circuits.[40][41][42][43] This concept, of utilizing the properties of electrical switches to do logic, is the basic concept that underlies all electronic digital computers. Switching circuit theory provided the mathematical foundations and tools for digital system design in almost all areas of modern technology.[43]
+
+While taking an undergraduate philosophy class, Shannon had been exposed to Boole's work, and recognized that it could be used to arrange electromechanical relays (then used in telephone routing switches) to solve logic problems. His thesis became the foundation of practical digital circuit design when it became widely known among the electrical engineering community during and after World War II.[44]
+Alan Turing and the Turing machine
+Main articles: Alan Turing and Turing machine
+Alan Turing, English computer scientist, mathematician, logician, and cryptanalyst. (circa 1930)
+
+Before the 1920s, computers (sometimes computors) were human clerks that performed computations. They were usually under the lead of a physicist. Many thousands of computers were employed in commerce, government, and research establishments. Many of these clerks who served as human computers were women.[45][46][47][48] Some performed astronomical calculations for calendars, others ballistic tables for the military.[49]
+
+After the 1920s, the expression computing machine referred to any machine that performed the work of a human computer, especially those in accordance with effective methods of the Church-Turing thesis. The thesis states that a mathematical method is effective if it could be set out as a list of instructions able to be followed by a human clerk with paper and pencil, for as long as necessary, and without ingenuity or insight.
+
+Machines that computed with continuous values became known as the analog kind. They used machinery that represented continuous numeric quantities, like the angle of a shaft rotation or difference in electrical potential.
+
+Digital machinery, in contrast to analog, were able to render a state of a numeric value and store each individual digit. Digital machinery used difference engines or relays before the invention of faster memory devices.
+
+The phrase computing machine gradually gave way, after the late 1940s, to just computer as the onset of electronic digital machinery became common. These computers were able to perform the calculations that were performed by the previous human clerks.
+
+Since the values stored by digital machines were not bound to physical properties like analog devices, a logical computer, based on digital equipment, was able to do anything that could be described "purely mechanical." The theoretical Turing Machine, created by Alan Turing, is a hypothetical device theorized in order to study the properties of such hardware.
+
+The mathematical foundations of modern computer science began to be laid by Kurt Gödel with his incompleteness theorem (1931). In this theorem, he showed that there were limits to what could be proved and disproved within a formal system. This led to work by Gödel and others to define and describe these formal systems, including concepts such as mu-recursive functions and lambda-definable functions.[50]
+
+In 1936 Alan Turing and Alonzo Church independently, and also together, introduced the formalization of an algorithm, with limits on what can be computed, and a "purely mechanical" model for computing.[51] This became the Church–Turing thesis, a hypothesis about the nature of mechanical calculation devices, such as electronic computers. The thesis states that any calculation that is possible can be performed by an algorithm running on a computer, provided that sufficient time and storage space are available.[51]
+
+In 1936, Alan Turing also published his seminal work on the Turing machines, an abstract digital computing machine which is now simply referred to as the Universal Turing machine. This machine invented the principle of the modern computer and was the birthplace of the stored program concept that almost all modern day computers use.[52] These hypothetical machines were designed to formally determine, mathematically, what can be computed, taking into account limitations on computing ability. If a Turing machine can complete the task, it is considered Turing computable.[53]
+
+The Los Alamos physicist Stanley Frankel, has described John von Neumann's view of the fundamental importance of Turing's 1936 paper, in a letter:[52]
+
+    I know that in or about 1943 or ‘44 von Neumann was well aware of the fundamental importance of Turing's paper of 1936… Von Neumann introduced me to that paper and at his urging I studied it with care. Many people have acclaimed von Neumann as the "father of the computer" (in a modern sense of the term) but I am sure that he would never have made that mistake himself. He might well be called the midwife, perhaps, but he firmly emphasized to me, and to others I am sure, that the fundamental conception is owing to Turing...
+
+John V. Atanasoff (1903–1995) created the first electric digital computer, known as the Atanasoff–Berry computer
+Kathleen Booth and the first assembly language
+
+Kathleen Booth wrote the first assembly language and designed the assembler and autocode for the Automatic Relay Calculator (ARC) at Birkbeck College, University of London.[54] She helped design three different machines including the ARC, SEC (Simple Electronic Computer), and APE(X)C.
+Early computer hardware
+
+The world's first electronic digital computer, the Atanasoff–Berry computer, was built on the Iowa State campus from 1939 through 1942 by John V. Atanasoff, a professor of physics and mathematics, and Clifford Berry, an engineering graduate student.
+Konrad Zuse, inventor of the modern computer[55][56]
+
+In 1941, Konrad Zuse developed the world's first functional program-controlled computer, the Z3. In 1998, it was shown to be Turing-complete in principle.[57][58] Zuse also developed the S2 computing machine, considered the first process control computer. He founded one of the earliest computer businesses in 1941, producing the Z4, which became the world's first commercial computer. In 1946, he designed the first high-level programming language, Plankalkül.[59]
+
+In 1948, the Manchester Baby was completed; it was the world's first electronic digital computer that ran programs stored in its memory, like almost all modern computers.[52] The influence on Max Newman of Turing's seminal 1936 paper on the Turing Machines and of his logico-mathematical contributions to the project, were both crucial to the successful development of the Baby.[52]
+
+In 1950, Britain's National Physical Laboratory completed Pilot ACE, a small scale programmable computer, based on Turing's philosophy. With an operating speed of 1 MHz, the Pilot Model ACE was for some time the fastest computer in the world.[52][60] Turing's design for ACE had much in common with today's RISC architectures and it called for a high-speed memory of roughly the same capacity as an early Macintosh computer, which was enormous by the standards of his day.[52] Had Turing's ACE been built as planned and in full, it would have been in a different league from the other early computers.[52]
+
+Later in the 1950s, the first operating system, GM-NAA I/O, supporting batch processing to allow jobs to be run with less operator intervention, was developed by General Motors and North American Aviation for the IBM 701.
+
+In 1969, an experiment was conducted by two research teams at UCLA and Stanford to create a network between 2 computers although the system crashed during the initial attempt to connect to the other computer but was a huge step towards the Internet.
+Claude Shannon (1916–2001) created the field of information theory
+
+The first actual computer bug was a moth. It was stuck in between the relays on the Harvard Mark II.[61] While the invention of the term 'bug' is often but erroneously attributed to Grace Hopper, a future rear admiral in the U.S. Navy, who supposedly logged the "bug" on September 9, 1945, most other accounts conflict at least with these details. According to these accounts, the actual date was September 9, 1947 when operators filed this 'incident' — along with the insect and the notation "First actual case of bug being found" (see software bug for details).[61]
+Shannon and information theory
+
+Claude Shannon went on to found the field of information theory with his 1948 paper titled A Mathematical Theory of Communication, which applied probability theory to the problem of how to best encode the information a sender wants to transmit. This work is one of the theoretical foundations for many areas of study, including data compression and cryptography.[62]
+Norbert Wiener (1894–1964) created the term cybernetics
+Wiener and cybernetics
+
+From experiments with anti-aircraft systems that interpreted radar images to detect enemy planes, Norbert Wiener coined the term cybernetics from the Greek word for "steersman." He published "Cybernetics" in 1948, which influenced artificial intelligence. Wiener also compared computation, computing machinery, memory devices, and other cognitive similarities with his analysis of brain waves.[63]
+John von Neumann (1903–1957) introduced the computer architecture known as Von Neumann architecture
+John von Neumann and the von Neumann architecture
+Main articles: John von Neumann and Von Neumann architecture
+
+In 1946, a model for computer architecture was introduced and became known as Von Neumann architecture. Since 1950, the von Neumann model provided uniformity in subsequent computer designs. The von Neumann architecture was considered innovative as it introduced an idea of allowing machine instructions and data to share memory space.[64] The von Neumann model is composed of three major parts, the arithmetic logic unit (ALU), the memory, and the instruction processing unit (IPU). In von Neumann machine design, the IPU passes addresses to memory, and memory, in turn, is routed either back to the IPU if an instruction is being fetched or to the ALU if data is being fetched.[65]
+
+Von Neumann's machine design uses a RISC (Reduced instruction set computing) architecture,[dubious – discuss] which means the instruction set uses a total of 21 instructions to perform all tasks. (This is in contrast to CISC, complex instruction set computing, instruction sets which have more instructions from which to choose.) With von Neumann architecture, main memory along with the accumulator (the register that holds the result of logical operations)[66] are the two memories that are addressed. Operations can be carried out as simple arithmetic (these are performed by the ALU and include addition, subtraction, multiplication and division), conditional branches (these are more commonly seen now as if statements or while loops. The branches serve as go to statements), and logical moves between the different components of the machine, i.e., a move from the accumulator to memory or vice versa. Von Neumann architecture accepts fractions and instructions as data types. Finally, as the von Neumann architecture is a simple one, its register management is also simple. The architecture uses a set of seven registers to manipulate and interpret fetched data and instructions. These registers include the "IR" (instruction register), "IBR" (instruction buffer register), "MQ" (multiplier quotient register), "MAR" (memory address register), and "MDR" (memory data register)."[65] The architecture also uses a program counter ("PC") to keep track of where in the program the machine is.[65]
+John McCarthy (1927–2011) is considered one of the founding fathers of artificial intelligence
+John McCarthy, Marvin Minsky and artificial intelligence
+Main articles: John McCarthy (computer scientist), Marvin Minsky, and Artificial intelligence
+
+The term artificial intelligence was credited by John McCarthy to explain the research that they were doing for a proposal for the Dartmouth Summer Research. The naming of artificial intelligence also led to the birth of a new field in computer science.[67] On August 31, 1955, a research project was proposed consisting of John McCarthy, Marvin L. Minsky, Nathaniel Rochester, and Claude E. Shannon. The official project began in 1956 that consisted of several significant parts they felt would help them better understand artificial intelligence's makeup.
+
+McCarthy and his colleagues' ideas behind automatic computers was while a machine is capable of completing a task, then the same should be confirmed with a computer by compiling a program to perform the desired results. They also discovered that the human brain was too complex to replicate, not by the machine itself but by the program. The knowledge to produce a program that sophisticated was not there yet.
+
+The concept behind this was looking at how humans understand our own language and structure of how we form sentences, giving different meaning and rule sets and comparing them to a machine process. The way computers can understand is at a hardware level. This language is written in binary (1s and 0's). This has to be written in a specific format that gives the computer the ruleset to run a particular hardware piece.[68]
+
+Minsky's process determined how these artificial neural networks could be arranged to have similar qualities to the human brain. However, he could only produce partial results and needed to further the research into this idea.
+
+McCarthy and Shannon's idea behind this theory was to develop a way to use complex problems to determine and measure the machine's efficiency through mathematical theory and computations.[69] However, they were only to receive partial test results.
+
+The idea behind self-improvement is how a machine would use self-modifying code to make itself smarter. This would allow for a machine to grow in intelligence and increase calculation speeds.[70] The group believed they could study this if a machine could improve upon the process of completing a task in the abstractions part of their research.
+
+The group thought that research in this category could be broken down into smaller groups. This would consist of sensory and other forms of information about artificial intelligence. Abstractions in computer science can refer to mathematics and programming language.[71]
+
+Their idea of computational creativity is how the program or a machine can be seen in having similar ways of human thinking.[72] They wanted to see if a machine could take a piece of incomplete information and improve upon it to fill in the missing details as the human mind can do. If this machine could do this; they needed to think of how did the machine determine the outcome.
+See also
+
+    Computer museum
+    List of computer term etymologies, the origins of computer science words
+    List of pioneers in computer science
+    History of computing
+    History of computing hardware
+    History of software
+    History of personal computers
+    Timeline of algorithms
+    Timeline of women in computing
+    Timeline of computing 2020–present
+
+References
+
+Tedre, Matti (2014). The Science of Computing: Shaping a Discipline. Chapman Hall.
+"History of Computer Science". uwaterloo.ca.
+Boyer, Carl B.; Merzbach, Uta C. (1991). A History of Mathematics (2nd ed.). John Wiley & Sons, Inc. pp. 252–253. ISBN 978-0-471-54397-8.
+Ifrah, Georges (2001). The Universal History of Computing: From the Abacus to the Quantum Computer. John Wiley & Sons. ISBN 978-0-471-39671-0.
+Bellos, Alex (2012-10-25). "Abacus adds up to number joy in Japan". The Guardian. London. Retrieved 2013-06-25.
+Sinha, A. C. (1978). "On the status of recursive rules in transformational grammar". Lingua. 44 (2–3): 169–218. doi:10.1016/0024-3841(78)90076-1.
+"Project Overview". The Antikythera Mechanism Research Project. Archived from the original on 2022-05-21. Retrieved 2023-07-06.
+"Islam, Knowledge, and Science". Islamic Web. Retrieved 2017-11-05.
+Lorch, R. P. (1976), "The Astronomical Instruments of Jabir ibn Aflah and the Torquetum", Centaurus, 20 (1): 11–34, Bibcode:1976Cent...20...11L, doi:10.1111/j.1600-0498.1976.tb00214.x
+Simon Singh. The Code Book. pp. 14–20.
+"Al-Kindi, Cryptography, Codebreaking and Ciphers". 9 June 2003. Retrieved 2023-08-25.
+Koetsier, Teun (2001), "On the prehistory of programmable machines: musical automata, looms, calculators", Mechanism and Machine Theory, 36 (5): 589–603, doi:10.1016/S0094-114X(01)00005-2.
+Marchant, Jo (November 2006). "In search of lost time". Nature. 444 (7119): 534–538. Bibcode:2006Natur.444..534M. doi:10.1038/444534a. PMID 17136067.
+"John Napier and the Invention of Logarithms, 1614. E. W. Hobson". Isis. 3 (2): 285–286. 1920-10-01. doi:10.1086/357925. ISSN 0021-1753.
+"1.6 Shickard's Calculating Clock | Bit by Bit". Retrieved 2021-03-17.
+"History of Computing Science: The First Mechanical Calculator". eingang.org.
+Kidwell, Peggy Aldritch; Williams, Michael R. (1992). The Calculating Machines: Their history and development. MIT Press., p.38-42, translated and edited from Martin, Ernst (1925). Die Rechenmaschinen und ihre Entwicklungsgeschichte. Germany: Pappenheim.
+"CS History". everythingcomputerscience.com. Retrieved 2020-05-01.
+"2021: 375th birthday of Leibniz, father of computer science". people.idsia.ch.
+Lande, Daniel. "Development of the Binary Number System and the Foundations of Computer Science". The Mathematics Enthusiast: 513–540.
+Wiener, N., Cybernetics (2nd edition with revisions and two additional chapters), The MIT Press and Wiley, New York, 1961, p. 12.
+Wiener, Norbert (1948). "Time, Communication, and the Nervous System". Annals of the New York Academy of Sciences. 50 (4 Teleological): 197–220. Bibcode:1948NYASA..50..197W. doi:10.1111/j.1749-6632.1948.tb39853.x. PMID 18886381. S2CID 28452205. Archived from the original on 23 July 2021. Retrieved 23 July 2021.
+Tedre, Matti (2014). The Science of Computing: Shaping a Discipline. CRC Press.
+"Charles Babbage". Encyclopædia Britannica Online Academic Edition. Encyclopædia Britannica In. 3 July 2023. Retrieved 2023-07-06.
+Evans 2018, p. 16.
+Evans 2018, p. 21.
+Evans 2018, p. 20.
+Isaacson, Betsy (2012-12-10). "Ada Lovelace, World's First Computer Programmer, Celebrated With Google Doodle". The Huffington Post. Retrieved 2013-02-20.
+"The John Gabriel Byrne Computer Science Collection" (PDF). Archived from the original on 2019-04-16. Retrieved 2019-08-08.
+"1907: was the first portable computer design Irish?". Ingenious Ireland. 17 October 2012.
+L. Torres Quevedo (1914). "Ensayos sobre Automática – Su definicion. Extension teórica de sus aplicaciones". Revista de la Academia de Ciencias Exacta, Revista 12: 391–418.
+Torres Quevedo, Leonardo (19 November 1914). "Automática: Complemento de la Teoría de las Máquinas" (PDF). Revista de Obras Públicas. LXII (2043): 575–583.
+Kneusel, Ronald T. (2017). Numbers and Computers. Springer. pp. 84–85. ISBN 978-3319505084.
+Randell, B. (1982). "Electromechanical Calculating Machine". The Origins of Digital Computers. Springer. pp. 109–120. ISBN 9783540113195.
+Randell, Brian. "From Analytical Engine to Electronic Digital Computer: The Contributions of Ludgate, Torres, and Bush" (PDF). Archived from the original (PDF) on 21 September 2013. Retrieved 9 September 2013.
+Peirce, C. S., "Letter, Peirce to A. Marquand", dated 1886, Writings of Charles S. Peirce, v. 5, 1993, pp. 421–23. See Burks, Arthur W., "Review: Charles S. Peirce, The new elements of mathematics", Bulletin of the American Mathematical Society v. 84, n. 5 (1978), pp. 913–18, see 917. PDF Eprint.
+Peirce, C. S. (manuscript winter of 1880–81), "A Boolian Algebra with One Constant", published 1933 in Collected Papers v. 4, paragraphs 12–20. Reprinted 1989 in Writings of Charles S. Peirce v. 4, pp. 218–21, Google [1]. See Roberts, Don D. (2009), The Existential Graphs of Charles S. Peirce, p. 131.
+Hans Kleine Büning; Theodor Lettmann (1999). Propositional logic: deduction and algorithms. Cambridge University Press. p. 2. ISBN 978-0-521-63017-7.
+John Bird (2007). Engineering mathematics. Newnes. p. 532. ISBN 978-0-7506-8555-9.
+Yamada, Akihiko (2004). "History of Research on Switching Theory in Japan". IEEJ Transactions on Fundamentals and Materials. 124 (8). Institute of Electrical Engineers of Japan: 720–726. Bibcode:2004IJTFM.124..720Y. doi:10.1541/ieejfms.124.720.
+"Switching Theory/Relay Circuit Network Theory/Theory of Logical Mathematics". IPSJ Computer Museum. Information Processing Society of Japan.
+Radomir S. Stanković (University of Niš), Jaakko T. Astola (Tampere University of Technology), Mark G. Karpovsky (Boston University), Some Historical Remarks on Switching Theory, 2007, DOI 10.1.1.66.1248
+Stanković, Radomir S. [in German]; Astola, Jaakko Tapio [in Finnish], eds. (2008). Reprints from the Early Days of Information Sciences: TICSP Series On the Contributions of Akira Nakashima to Switching Theory (PDF). Tampere International Center for Signal Processing (TICSP) Series. Vol. 40. Tampere University of Technology, Tampere, Finland. ISBN 978-952-15-1980-2. ISSN 1456-2774. Archived from the original (PDF) on 2021-03-08. (3+207+1 pages) 10:00 min
+Shannon, Claude (2021-02-02), "A Symbolic Analysis of Relay and Switching Circuits (1938)", Ideas That Created the Future, The MIT Press, pp. 71–78, doi:10.7551/mitpress/12274.003.0010, hdl:1721.1/11173, ISBN 978-0-262-36317-4, S2CID 242857376, retrieved 2021-03-17
+Light, Jennifer S. (1999-07-01). "When Computers Were Women". Technology and Culture. 40 (3): 455–483. doi:10.1353/tech.1999.0128. ISSN 1097-3729. S2CID 108407884.
+Kiesler, Sara; Sproull, Lee; Eccles, Jacquelynne S. (1985-12-01). "Pool Halls, Chips, and War Games: Women in the Culture of Computing". Psychology of Women Quarterly. 9 (4): 451–462. doi:10.1111/j.1471-6402.1985.tb00895.x. ISSN 1471-6402. S2CID 143445730.
+Fritz, W. B. (1996). "The women of ENIAC". IEEE Annals of the History of Computing. 18 (3): 13–28. doi:10.1109/85.511940.
+Gürer, Denise (2002-06-01). "Pioneering Women in Computer Science". SIGCSE Bull. 34 (2): 175–180. doi:10.1145/543812.543853. ISSN 0097-8418. S2CID 2577644.
+Grier 2013, p. 138.
+"Gödel and the limits of logic". plus.maths.org. 2006-06-01. Retrieved 2020-05-01.
+Copeland, B. Jack (2019). "The Church-Turing Thesis". In Zalta, Edward N. (ed.). Stanford Encyclopedia of Philosophy (Spring 2019 ed.). Metaphysics Research Lab, Stanford University. Retrieved 2020-05-01.
+"Turing's Automatic Computing Engine". The Modern History of Computing. Stanford Encyclopedia of Philosophy. Metaphysics Research Lab, Stanford University. 2017.
+Barker-Plummer, David (1995-09-14). "Turing Machines". Stanford Encyclopedia of Philosophy. Retrieved 2013-02-20.
+Booth, Kathleen HV, "Machine language for Automatic Relay Computer", Birkbeck College Computation Laboratory, University of London
+Bellis, Mary (15 May 2019) [First published 2006 at inventors.about.com/library/weekly/aa050298.htm]. "Biography of Konrad Zuse, Inventor and Programmer of Early Computers". thoughtco.com. Dotdash Meredith. Archived from the original on 13 December 2020. Retrieved 3 February 2021. "Konrad Zuse earned the semiofficial title of 'inventor of the modern computer'[who?]"
+"Who is the Father of the Computer?". ComputerHope.
+Rojas, R. (1998). "How to make Zuse's Z3 a universal computer". IEEE Annals of the History of Computing. 20 (3): 51–54. doi:10.1109/85.707574. S2CID 14606587.
+Rojas, Raúl. "How to Make Zuse's Z3 a Universal Computer". Archived from the original on 2014-07-14.
+Talk given by Horst Zuse to the Computer Conservation Society at the Science Museum (London) on 18 November 2010
+"BBC News – How Alan Turing's Pilot ACE changed computing". BBC News. May 15, 2010.
+"The First "Computer Bug"". CHIPS. 30 (1). United States Navy: 18. January–March 2012. Retrieved 2023-12-03.
+Shannon, Claude Elwood (1964). The mathematical theory of communication. Warren Weaver. Urbana: University of Illinois Press. ISBN 0-252-72548-4. OCLC 2654027.
+Xiong, Aiping; Proctor, Robert W. (2018). "Information Processing: The Language and Analytical Tools for Cognitive Psychology in the Information Age". Frontiers in Psychology. 9: 1270. doi:10.3389/fpsyg.2018.01270. ISSN 1664-1078. PMC 6092626. PMID 30135664.
+"Von Neumann Architecture - an overview | ScienceDirect Topics". www.sciencedirect.com. Retrieved 2021-03-17.
+Cragon, Harvey G. (2000). Computer Architecture and Implementation. Cambridge: Cambridge University Press. pp. 1–13. ISBN 978-0-521-65168-4.
+"Accumlator" Def. 3. Oxford Dictionaries. Archived from the original on May 18, 2013.
+Moor, James (2006-12-15). "The Dartmouth College Artificial Intelligence Conference: The Next Fifty Years". AI Magazine. 27 (4): 87. doi:10.1609/aimag.v27i4.1911. ISSN 2371-9621.
+Prudhomme, Gerard (December 2018). Introduction to Assembly Language Programming. Arcler Education Incorporated. ISBN 978-1-77361-470-0. OCLC 1089398724.
+McCarthy, John; Lifschitz, Vladimir (1991). Artificial intelligence and mathematical theory of computation : papers in honor of John McCarthy. Academic Press. ISBN 0-12-450010-2. OCLC 911282256.
+Haenlein, Michael; Kaplan, Andreas (2019). "A Brief History of Artificial Intelligence: On the Past, Present, and Future of Artificial Intelligence". California Management Review. 61 (4): 5–14. doi:10.1177/0008125619864925. ISSN 0008-1256. S2CID 199866730.
+Baeten, Jos C. M.; Ball, Tom; de Boer, Frank S., eds. (2012). Theoretical Computer Science: 7th IFIP TC 1/WG 2.2 International Conference, TCS 2012, Amsterdam, the Netherlands, September 26-28, 2012. Proceedings. Lecture Notes in Computer Science. Vol. 7604. Berlin, Heidelberg: Springer Berlin Heidelberg. doi:10.1007/978-3-642-33475-7. ISBN 978-3-642-33474-0. S2CID 36796448.
+
+    "The Creativity Post | What is Computational Creativity?". The Creativity Post. Retrieved 2021-03-04.
+
+Sources
+
+    Evans, Claire L. (2018). Broad Band: The Untold Story of the Women Who Made the Internet. New York: Portfolio/Penguin. ISBN 9780735211759.
+    Grier, David Alan (2013). When Computers Were Human. Princeton: Princeton University Press. ISBN 9781400849369 – via Project MUSE.
+
+Further reading
+
+    Tedre, Matti (2014). The Science of Computing: Shaping a Discipline. Taylor and Francis / CRC Press. ISBN 978-1-4822-1769-8.
+    Kak, Subhash : Computing Science in Ancient India; Munshiram Manoharlal Publishers Pvt. Ltd (2001)
+    The Development of Computer Science: A Sociocultural Perspective Matti Tedre's Ph.D. Thesis, University of Joensuu (2006)
+    Ceruzzi, Paul E. (1998). A History of a Modern Computing. The MIT Press. ISBN 978-0-262-03255-1.
+    Copeland, B. Jack. "The Modern History of Computing". In Zalta, Edward N. (ed.). Stanford Encyclopedia of Philosophy.
+
+External links
+Wikimedia Commons has media related to History of computer science.
+
+    Computer History Museum
+    Computers: From the Past to the Present
+    The First "Computer Bug" at the Naval History and Heritage Command Photo Archives.
+    Bitsavers, an effort to capture, salvage, and archive historical computer software and manuals from minicomputers and mainframes of the 1950s, 1960s, 1970s, and 1980s
+    Oral history interviews
+
+Categories:
+
+    History of computer scienceHistory of science by disciplineHistory of computing
+
+    This page was last edited on 6 October 2024, at 00:19 (UTC).
+    Text is available under the Creative Commons Attribution-ShareAlike 4.0 License; additional terms may apply. By using this site, you agree to the Terms of Use and Privacy Policy. Wikipedia® is a registered trademark of the Wikimedia Foundation, Inc., a non-profit organization.
+
+    Privacy policy
+    About Wikipedia
+    Disclaimers
+    Contact Wikipedia
+    Code of Conduct
+    Developers
+    Statistics
+    Cookie statement
+    Mobile view
+
+    Wikimedia Foundation
+    Powered by MediaWiki
+
+History of computer science
+Add topic
+

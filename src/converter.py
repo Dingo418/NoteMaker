@@ -41,6 +41,7 @@ def get_youtube(URL : str) -> None:
     
 
 def extract_text_from_pptx(file_path : Path) -> str:
+    """Extract text on the slide and the notes of a powerpoint"""
     prs = Presentation(file_path)
     extracted_text = []
     

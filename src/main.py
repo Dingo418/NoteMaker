@@ -7,30 +7,34 @@ from pathlib import Path
 
 configValues = config.config
 
-def split_up(text : str) -> list:
-    """Splits the text up into X character long chunks then returns all the chunks as a list""" 
-    # Known bug, if the sentence is longer then the max character size it won't add, but this should not show itself
-    # In general use
+def split_up(text: str) -> list:
+    """Splits the text into chunks of max_characters in length, preserving sentence boundaries. Not 100% accurate, but very close"""
+    
     max_characters = int(configValues['PREFERENCES']['max_characters'])
+    sentences = text.split(". ")
+    
     chunks = []
     chunk = ""
-    
-    sentences = text.split(".")
-    
     character_count = 0
-    i = 0  
-    while i < len(sentences)-1:
-        if (character_count + len(sentences[i])) > max_characters:
-            chunks.append(chunk)
-            character_count = 0
-            chunk = ""
+    
+    for sentence in sentences:
+        sentence_length = len(sentence) + 1  # Including space after the sentence
+        if character_count + sentence_length > max_characters:
+            # If adding the sentence exceeds the max limit, save the current chunk and reset
+            chunks.append(chunk.strip())
+            chunk = sentence
+            character_count = sentence_length
         else:
-            character_count += len(sentences[i])
-            chunk += sentences[i]
-        i += 1
-    chunks.append(chunk)
-
+            # Otherwise, add sentence to the current chunk
+            chunk += sentence + ". "
+            character_count += sentence_length
+    
+    # Append the last chunk, if any
+    if chunk:
+        chunks.append(chunk.strip())
+    
     return chunks
+
 
 def get_text_from_file(file_path : Path) -> str:
     """Open and reads a file"""
