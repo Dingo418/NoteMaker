@@ -49,9 +49,11 @@ def export_md(response : list, output_path : Path) -> None:
 
 def gpt_process(text : str, system_prompt_path : Path) -> list:
     """Sends chunks to the GPT Processes and collates the response"""
+    previous_note_end = "This is the start of a new note."
     responses = []
     chunks = split_up(text)
-    previous_note_end = "This is the start of a new note."
+    
+    print(f"Out of {len(chunks)}")
     for i,chunk in enumerate(chunks):
         responses.append(gpt.getGPT(chunk, system_prompt_path, previous_note_end))
         previous_note_end = responses[-1][:-20] 
@@ -101,21 +103,22 @@ def main() -> None:
     args = parser.parse_args()
     output_path_note = Path("notes_" + args.output)
     output_path_summary = Path( "summary_" + args.output)
-    will_summaries = bool(configValues['PREFERENCES']['will_summarise'])
+    will_summarize = bool(configValues['PREFERENCES']['will_summarize'])
+    will_note = bool(configValues['PREFERENCES']['will_note'])
     file_path = Path(args.filename)
 
     print("Recieving all the text from the file", file_path.name)
-    text = get_text(file_path)
+    responses = get_text(file_path) #Allows it to either summarize or note
+    if will_note == "True":
+        print("A GPT is now processing the information")
+        responses = gpt_process(responses, Path("data/note_prompt.txt"))
 
-    print("A GPT is now processing the information")
-    responses = gpt_process(text, Path("data/note_prompt.txt"))
-
-    print("The note responses are now getting exported")
-    export_md(responses, output_path_note)
+        print("The note responses are now getting exported")
+        export_md(responses, output_path_note)
     
-    if will_summaries == "True": # I know, the ini returns strings
-        print("The GPT is now summarising the complete notes")
-        responses = gpt_process("".join(responses), Path("data/summarise_prompt.txt"))
+    if will_summarize == "True": # I know, the ini returns strings
+        print("The GPT is now summarizing the complete notes")
+        responses = gpt_process("".join(responses), Path("data/summarize_prompt.txt"))
 
         print("The note responses are now getting exported")
         export_md(responses, output_path_summary)

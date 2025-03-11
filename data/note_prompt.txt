@@ -6,6 +6,5 @@ Please take notes in the established format as you continue.
 - **Passage-Based**: Base your notes strictly on the provided passages.
 - **Inclusion of Information**: Do not exclude any information. Ensure all passage content is in the notes.
 
-
 # Continuation
-Please continue from the last section of the previous note.
+Please continue from the last section of the previous note: 

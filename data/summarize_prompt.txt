@@ -7,3 +7,6 @@ Summarise the provided notes into a structured and concise format while ensuring
 - **Concise Yet Complete**: Ensure all essential information is included while eliminating redundancy.  
 - **Passage-Based**: Base your summary notes strictly on the provided notes.
 - **Logical Flow**: Organise the notes logically for easy comprehension.  
+
+# Continuation
+Please continue from the last section of the previous note:
