@@ -8,14 +8,28 @@ from pathlib import Path
 configValues = config.config
 
 def split_up(text : str) -> list:
-    """Splits the text up into X sentences long prompts and adds them to a list"""
+    """Splits the text up into X character long chunks then returns all the chunks as a list""" 
+    # Known bug, if the sentence is longer then the max character size it won't add, but this should not show itself
+    # In general use
+    max_characters = int(configValues['PREFERENCES']['max_characters'])
     chunks = []
-    max_sentences = int(configValues['PREFERENCES']['max_sentences'])
+    chunk = ""
+    
     sentences = text.split(".")
+    
+    character_count = 0
+    i = 0  
+    while i < len(sentences)-1:
+        if (character_count + len(sentences[i])) > max_characters:
+            chunks.append(chunk)
+            character_count = 0
+            chunk = ""
+        else:
+            character_count += len(sentences[i])
+            chunk += sentences[i]
+        i += 1
+    chunks.append(chunk)
 
-    for i in range(0, len(sentences), max_sentences):
-        chunk = " ".join(sentences[i:i+max_sentences])
-        chunks.append(chunk)
     return chunks
 
 def get_text_from_file(file_path : Path) -> str:

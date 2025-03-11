@@ -1,0 +1,19 @@
+he history of computer science began long before the modern discipline of computer science, usually appearing in forms like mathematics or physics. Developments in previous centuries alluded to the discipline that we now know as computer science.[1] This progression, from mechanical inventions and mathematical theories towards modern computer concepts and machines, led to the development of a major academic field, massive technological advancement across the Western world, and the basis of a massive worldwide trade and culture.[2]
+Prehistory
+John Napier (1550–1617), the inventor of logarithms
+
+The earliest known tool for use in computation was the abacus, developed in the period between 2700 and 2300 BCE in Sumer.[3] The Sumerians' abacus consisted of a table of successive columns which delimited the successive orders of magnitude of their sexagesimal number system.[4]: 11  Its original style of usage was by lines drawn in sand with pebbles. Abaci of a more modern design are still used as calculation tools today, such as the Chinese abacus.[5]
+
+In the 5th century BC in ancient India, the grammarian Pāṇini formulated the grammar of Sanskrit in 3959 rules known as the Ashtadhyayi which was highly systematized and technical. Panini used metarules, transformations and recursions.[6]
+
+The Antikythera mechanism is believed to be an early mechanical analog computer.[7] It was designed to calculate astronomical positions. It was discovered in 1901 in the Antikythera wreck off the Greek island of Antikythera, between Kythera and Crete, and has been dated to circa 100 BC.[7]
+
+Mechanical analog computer devices appeared again a thousand years later in the medieval Islamic world. They were developed by Muslim astronomers, such as the mechanical geared astrolabe by Abū Rayhān al-Bīrūnī,[8] and the torquetum by Jabir ibn Aflah.[9] According to Simon Singh, Muslim mathematicians also made important advances in cryptography, such as the development of cryptanalysis and frequency analysis by Alkindus.[10][11] Programmable machines were also invented by Muslim engineers, such as the automatic flute player by the Banū Mūsā brothers.[12]
+
+Technological artifacts of similar complexity appeared in 14th century Europe, with mechanical astronomical clocks.[13]
+
+When John Napier discovered logarithms for computational purposes in the early 17th century,[14] there followed a period of considerable progress by inventors and scientists in making calculating tools. In 1623 Wilhelm Schickard designed a calculating machine as a commission for Johannes Kepler which he named the Calculating Clock, but abandoned the project, when the prototype he had started building was destroyed by a fire in 1624.[15] Around 1640, Blaise Pascal, a leading French mathematician, constructed a mechanical adding device based on a design described by Greek mathematician Hero of Alexandria.[16] Then in 1672 Gottfried Wilhelm Leibniz invented the Stepped Reckoner which he completed in 1694.[17]
+
+In 1837 Charles Babbage first described his Analytical Engine which is accepted as the first design for a modern computer. The analytical engine had expandable memory, an arithmetic unit, and logic processing capabilities able to interpret a programming language with loops and conditional branching. Although never built, the design has been studied extensively and is understood to be Turing equivalent. The analytical engine would have had a memory capacity of less than 1 kilobyte of memory and a clock speed of less than 10 Hertz.[18]
+
+Considerable advancement in mathematics and electronics theory was required before the first modern computers could be designed. 
