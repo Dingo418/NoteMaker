@@ -6,8 +6,6 @@ Please take notes in the established format as you continue.
 - **Passage-Based**: Base your notes strictly on the provided passages.
 - **Inclusion of Information**: Do not exclude any information. Ensure all passage content is in the notes.
 
-Conclude each section with [End of Notes]
 
-# Output Format
-
-Your notes should be formatted in a bullet-point style with important terms bolded, and end with the designated message count indicator.
+# Continuation
+Please continue from the last section of the previous note.

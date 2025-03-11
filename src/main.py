@@ -35,7 +35,6 @@ def split_up(text: str) -> list:
     
     return chunks
 
-
 def get_text_from_file(file_path : Path) -> str:
     """Open and reads a file"""
     content = ""
@@ -52,12 +51,11 @@ def gpt_process(text : str, system_prompt_path : Path) -> list:
     """Sends chunks to the GPT Processes and collates the response"""
     responses = []
     chunks = split_up(text)
+    previous_note_end = "This is the start of a new note."
     for i,chunk in enumerate(chunks):
-        responses.append(gpt.getGPT(chunk, system_prompt_path))
+        responses.append(gpt.getGPT(chunk, system_prompt_path, previous_note_end))
+        previous_note_end = responses[-1][:-20] 
         print(f"Chunk {i} has been proccessed.")
-        if i > 2:
-            break
-
 
     return responses
 

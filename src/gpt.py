@@ -11,7 +11,7 @@ def get_system_prompt(system_prompt_path : Path) -> str:
         content = file.read()
     return content
 
-def openAi(given_text : str, system_prompt_path : Path) -> str:
+def openAi(given_text : str, system_prompt_path : Path, previous_note_end : str) -> str:
     """Connects to openAI and yoinks the response to the prompts"""
     response = ""
     client = OpenAI(api_key=config.OPENAI_API_KEY)
@@ -23,7 +23,7 @@ def openAi(given_text : str, system_prompt_path : Path) -> str:
                 "content": [
                     {
                         "type"  : "text",
-                        "text"  : get_system_prompt(system_prompt_path)
+                        "text"  : get_system_prompt(system_prompt_path) + previous_note_end
                     }
                 ] 
             },
@@ -42,12 +42,12 @@ def openAi(given_text : str, system_prompt_path : Path) -> str:
     return response
 
     
-def getGPT(given_text : str, system_prompt_path : Path) -> str:
+def getGPT(given_text : str, system_prompt_path : Path, previous_note_end : str) -> str:
     """Figures out which LLM-Provider to use"""
     response = ""
     match configValues['PREFERENCES']['provider']:
         case "openai":
-            response = openAi(given_text, system_prompt_path)
+            response = openAi(given_text, system_prompt_path, previous_note_end)
         case _:
             raise ValueError("WTF give me the right provider")
     return response
