@@ -29,22 +29,23 @@ def get_youtube(URL : str) -> None:
             'preferredcodec': 'wav',
         }],
         'outtmpl': str(Path("data/temp_audio")),
-        'quiet': False,       # Suppresses output logs
-        'no_warnings': False  # Suppresses warnings
+        'quiet': True,       # Suppresses output logs
+        'no_warnings': True  # Suppresses warnings
     }
 
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
         error_code = ydl.download(URL)
-    
+
+    # If the rip is not successful, raise a exception with the error code
     if error_code != 0:
         raise ValueError("youtube-dl error: ", error_code)
-    
 
 def extract_text_from_pptx(file_path : Path) -> str:
     """Extract text on the slide and the notes of a powerpoint"""
     prs = Presentation(file_path)
     extracted_text = []
     
+    # Goes into each slide and rips all the text out
     for i, slide in enumerate(prs.slides):
         slide_text = []
         
@@ -65,4 +66,4 @@ def extract_text_from_pptx(file_path : Path) -> str:
             "notes_text": notes_text
         })
     
-    return str(extracted_text)
+    return str(extracted_text) # Returns it as string
