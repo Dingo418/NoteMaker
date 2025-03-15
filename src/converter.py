@@ -4,12 +4,17 @@ import speech_recognition as sr
 import yt_dlp
 from pptx import Presentation
 
-def export_transcript(result : str) -> None:
+def read_file_content(file_path : Path) -> str:
     """
-    UNUSED: Exports transcript of audio to desired location
+    Open and reads a file
     """
-    with open(config.ROOT_DIR + '/data/transcript.txt', 'w') as file:
-        file.write(result)
+    try:
+        with open(file_path, 'r') as f:
+            responses = f.read()
+        return responses
+    except Exception as e:
+        print(f"An error occured while reading the file: {e}")
+        return None
 
 def speech_to_text(file : Path) -> str:
     """
@@ -76,3 +81,31 @@ def extract_text_from_pptx(file_path : Path) -> str:
         })
     
     return str(extracted_text) # Returns it as string
+
+
+
+def extract_text_from_file(file_path : Path) -> str:
+    """
+    Extracts text from various file types.
+    """
+    #Special case if it is a youtube video needs work
+    if "youtube.com" in str(file_path):
+        youtube_url = str(file_path)
+        youtube_url = "https://" + youtube_url[7:] #when converting from path, the \\ turns into \. This is a quick fix
+        get_youtube(youtube_url)
+        print("Youtube video has been converted to wav:")
+        file_path = Path("data/temp_audio.wav")
+
+    # Checks the suffix of a file, depending on the file suffix it will extract text in different ways
+    file_extension = file_path.suffix
+    match file_extension:
+        case ".txt" | ".md":
+            text =  read_file_content(file_path)
+        case ".wav":
+            print("Warning, this may take a while if it is a big file.")
+            text = speech_to_text(file_path)
+        case ".pptx":
+            text = extract_text_from_pptx(file_path)
+        case _:
+            raise ValueError(f"Unsupported file extension: {file_extension}") 
+    return text

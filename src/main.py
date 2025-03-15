@@ -7,8 +7,10 @@ from pathlib import Path
 NOTE_PROMPT_PATH = Path("data/note_prompt.txt")
 SUMMARY_PROMPT_PATH = Path("data/summarize_prompt.txt")
 
-def split_up(text: str) -> list:
-    """Splits the text into chunks of max_characters in length, preserving sentence boundaries. Not 100% accurate, but very close"""
+def chunk_text_by_sentences(text: str) -> list:
+    """
+    Splits the text into chunks respecting sentence boundaries, within the maximum character limit.
+    """
     # gets the max character limit and splits it based on sentences
     max_characters = config.MAX_CHARACTERS
     sentences = text.split(". ")
@@ -35,29 +37,20 @@ def split_up(text: str) -> list:
     
     return chunks
 
-def get_text_from_file(file_path : Path) -> str:
-    """
-    Open and reads a file
-    """
-    content = ""
-    with open(file_path, 'r') as file:
-        content = file.read()
-    return content
-
-def export_md(response : list, output_path : Path) -> None:
+def write_to_markdown(response : list, output_path : Path) -> None:
     """
     Exports the desired response to a desired path
     """
     with open(output_path, 'a') as file:
         file.write("".join(response))
 
-def gpt_process(text : str, system_prompt_path : Path) -> list:
+def process_text_with_gpt(text : str, system_prompt_path : Path) -> list:
     """
-    Sends chunks to the GPT Processes and collates the response
+    Processes text in chunks using GPT and concatenates the responses
     """
     previous_note_end = "This is the start of a new note. Ignore the previous sentence." # in the prompt there is a section to continue the note, 
     responses = []                                         # this makes it so it knows it the start of a note
-    chunks = split_up(text) # splits up the text into chunks, to improve gpt performance
+    chunks = chunk_text_by_sentences(text) # splits up the text into chunks, to improve gpt performance
     
     print(f"Out of {len(chunks)-1}") # finds out how many chunks there is
     for i,chunk in enumerate(chunks):
@@ -67,60 +60,23 @@ def gpt_process(text : str, system_prompt_path : Path) -> list:
 
     return responses
 
-def get_text(file_path : Path) -> str:
+def parse_arguments() -> None:
     """
-    Figure out what kind of file it is and gets it's text
+    Parses command-line arguments.
     """
-    #Special case if it is a youtube video needs work
-    if "youtube.com" in str(file_path):
-        youtube_url = str(file_path)
-        youtube_url = "https://" + youtube_url[7:] #when converting from path, the \\ turns into \. This is a quick fix
-        converter.get_youtube(youtube_url)
-        print("Youtube video has been converted to wav:")
-        file_path = Path("data/temp_audio.wav")
-
-    # Checks the suffix of a file, depending on the file suffix it will extract text in different ways
-    file_extension = file_path.suffix
-    match file_extension:
-        case ".txt" | ".md":
-            text = get_text_from_file(file_path)
-        case ".wav":
-            print("Warning, this may take a while if it is a big file.")
-            text = converter.speech_to_text(file_path)
-        case ".pptx":
-            text = converter.extract_text_from_pptx(file_path)
-        case _:
-            raise ValueError(f"Unsupported file extension: {file_extension}") 
-    return text
+    parser = argparse.ArgumentParser(description="Process files to create notes and summaries.")
+    parser.add_argument("-N", action="store_true", help="Enable note creation.")
+    parser.add_argument("-S", action="store_true", help="Enable summarization.")
+    parser.add_argument("-o", "--output", type=str, default="output.md", help="Output file name.")
+    parser.add_argument("filename", type=str, help="Input file path.")
+    return parser.parse_args()
 
 def main() -> None:
     """
     Main routine
     """
-    parser = argparse.ArgumentParser(description="The one stop program to creates notes out of anything!")
-    parser.add_argument(
-        "-N",
-        action="store_true",
-        help="Noting"
-    )
-    parser.add_argument(
-        "-S",
-        action="store_true",
-        help="Summarize"
-    )
-    parser.add_argument(
-        "-o", "--output",
-        type=str,
-        default="output.md",
-        help="Write to file"
-    )
-    parser.add_argument(
-        'filename', 
-        type=str, 
-        help="The file to process")
-    
     # Configures basic parameters
-    args = parser.parse_args()
+    args = parse_arguments()
     will_note = args.N
     will_summarize = args.S
     output_path_note = Path("notes_" + args.output)
@@ -130,23 +86,21 @@ def main() -> None:
     # Gets text from file
     print("Recieving all the text from the file", file_path.name)
 
-    responses = get_text(file_path)
+    responses = converter.extract_text_from_file(file_path)
     
-    # If the config says note, spin up a gpt using the text file and note_prompt.txt
-    if will_note == True:
+    if will_note:
         print("A GPT is now processing the information")
-        responses = gpt_process(responses, NOTE_PROMPT_PATH)
+        responses = process_text_with_gpt(responses, NOTE_PROMPT_PATH)
 
         print("The note responses are now getting exported")
-        export_md(responses, output_path_note)
+        write_to_markdown(responses, output_path_note)
     
-    # If the config says summarize, spin up a gpt with the summarize prompt, and the response of the previous code
-    if will_summarize == True:
+    if will_summarize:
         print("The GPT is now summarizing the complete notes")
-        responses = gpt_process("".join(responses), SUMMARY_PROMPT_PATH)
+        responses = process_text_with_gpt("".join(responses), SUMMARY_PROMPT_PATH)
 
         print("The note responses are now getting exported")
-        export_md(responses, output_path_summary)
+        write_to_markdown(responses, output_path_summary)
 
 if __name__ == "__main__":
     main()
