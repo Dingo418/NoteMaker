@@ -1,6 +1,5 @@
-pocketsphinx
-SpeechRecognition
 openai
 yt-dlp
 python-pptx
 python-dotenv
+textract

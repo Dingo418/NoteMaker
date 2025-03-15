@@ -81,13 +81,12 @@ def main() -> None:
     will_summarize = args.S
     output_path_note = Path("notes_" + args.output)
     output_path_summary = Path( "summary_" + args.output)
-    file_path = Path(args.filename)
+    file_path = args.filename
 
     # Gets text from file
-    print("Recieving all the text from the file", file_path.name)
+    print("Recieving all the text from the file", file_path)
 
     responses = converter.extract_text_from_file(file_path)
-    
     if will_note:
         print("A GPT is now processing the information")
         responses = process_text_with_gpt(responses, NOTE_PROMPT_PATH)
