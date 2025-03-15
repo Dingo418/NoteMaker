@@ -4,13 +4,13 @@ import argparse
 import converter
 from pathlib import Path
 
-
-configValues = config.config
+NOTE_PROMPT_PATH = Path("data/note_prompt.txt")
+SUMMARY_PROMPT_PATH = Path("data/summarize_prompt.txt")
 
 def split_up(text: str) -> list:
     """Splits the text into chunks of max_characters in length, preserving sentence boundaries. Not 100% accurate, but very close"""
     # gets the max character limit and splits it based on sentences
-    max_characters = int(configValues['PREFERENCES']['max_characters'])
+    max_characters = config.MAX_CHARACTERS
     sentences = text.split(". ")
     
     chunks = []
@@ -36,20 +36,25 @@ def split_up(text: str) -> list:
     return chunks
 
 def get_text_from_file(file_path : Path) -> str:
-    """Open and reads a file"""
+    """
+    Open and reads a file
+    """
     content = ""
     with open(file_path, 'r') as file:
         content = file.read()
     return content
 
 def export_md(response : list, output_path : Path) -> None:
-    """Exports the desired response to a desired path"""
-    # Just opens 
+    """
+    Exports the desired response to a desired path
+    """
     with open(output_path, 'a') as file:
         file.write("".join(response))
 
 def gpt_process(text : str, system_prompt_path : Path) -> list:
-    """Sends chunks to the GPT Processes and collates the response"""
+    """
+    Sends chunks to the GPT Processes and collates the response
+    """
     previous_note_end = "This is the start of a new note. Ignore the previous sentence." # in the prompt there is a section to continue the note, 
     responses = []                                         # this makes it so it knows it the start of a note
     chunks = split_up(text) # splits up the text into chunks, to improve gpt performance
@@ -63,8 +68,9 @@ def gpt_process(text : str, system_prompt_path : Path) -> list:
     return responses
 
 def get_text(file_path : Path) -> str:
-    """Figure out what kind of file it is and gets it's text"""
-
+    """
+    Figure out what kind of file it is and gets it's text
+    """
     #Special case if it is a youtube video needs work
     if "youtube.com" in str(file_path):
         youtube_url = str(file_path)
@@ -88,8 +94,20 @@ def get_text(file_path : Path) -> str:
     return text
 
 def main() -> None:
-    """Main routine"""
+    """
+    Main routine
+    """
     parser = argparse.ArgumentParser(description="The one stop program to creates notes out of anything!")
+    parser.add_argument(
+        "-N",
+        action="store_true",
+        help="Noting"
+    )
+    parser.add_argument(
+        "-S",
+        action="store_true",
+        help="Summarize"
+    )
     parser.add_argument(
         "-o", "--output",
         type=str,
@@ -103,28 +121,29 @@ def main() -> None:
     
     # Configures basic parameters
     args = parser.parse_args()
+    will_note = args.N
+    will_summarize = args.S
     output_path_note = Path("notes_" + args.output)
     output_path_summary = Path( "summary_" + args.output)
-    will_summarize = configValues['PREFERENCES']['will_summarize']
-    will_note = configValues['PREFERENCES']['will_note']
     file_path = Path(args.filename)
 
     # Gets text from file
     print("Recieving all the text from the file", file_path.name)
+
     responses = get_text(file_path)
     
     # If the config says note, spin up a gpt using the text file and note_prompt.txt
-    if will_note == "True": #I know, the ini returns strings
+    if will_note == True:
         print("A GPT is now processing the information")
-        responses = gpt_process(responses, Path("data/note_prompt.txt"))
+        responses = gpt_process(responses, NOTE_PROMPT_PATH)
 
         print("The note responses are now getting exported")
         export_md(responses, output_path_note)
     
     # If the config says summarize, spin up a gpt with the summarize prompt, and the response of the previous code
-    if will_summarize == "True": # I know, the ini returns strings
+    if will_summarize == True:
         print("The GPT is now summarizing the complete notes")
-        responses = gpt_process("".join(responses), Path("data/summarize_prompt.txt"))
+        responses = gpt_process("".join(responses), SUMMARY_PROMPT_PATH)
 
         print("The note responses are now getting exported")
         export_md(responses, output_path_summary)

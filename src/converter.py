@@ -5,12 +5,17 @@ import yt_dlp
 from pptx import Presentation
 
 def export_transcript(result : str) -> None:
-    """UNUSED: Exports transcript of audio to desired location"""
+    """
+    UNUSED: Exports transcript of audio to desired location
+    """
     with open(config.ROOT_DIR + '/data/transcript.txt', 'w') as file:
         file.write(result)
 
 def speech_to_text(file : Path) -> str:
-    """Yoinks the transcript from a audio clip. It can take a minute"""
+    """
+    Yoinks the transcript from a audio clip. It can take a minute
+    """
+
     r = sr.Recognizer()
     audio = sr.AudioFile(str(file))
 
@@ -21,7 +26,9 @@ def speech_to_text(file : Path) -> str:
     return result
 
 def get_youtube(URL : str) -> None:
-    """Get's the youtube video, and returns it as wav"""
+    """
+    Get's the youtube video, and returns it as wav
+    """
     ydl_opts = {
         'format': 'm4a/bestaudio/best',
         'postprocessors': [{  
@@ -41,7 +48,9 @@ def get_youtube(URL : str) -> None:
         raise ValueError("youtube-dl error: ", error_code)
 
 def extract_text_from_pptx(file_path : Path) -> str:
-    """Extract text on the slide and the notes of a powerpoint"""
+    """
+    Extract text on the slide and the notes of a powerpoint
+    """
     prs = Presentation(file_path)
     extracted_text = []
     
