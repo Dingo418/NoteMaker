@@ -102,7 +102,7 @@ def extract_text_from_file(file_path : str) -> str:
     """
     # Checks if file_path is a website
     if "http" in file_path:
-        # youtube is special so it gets it's own module
+        # youtube is special so it gets its' own module
         if "youtube.com" in file_path:
             youtube_url = file_path
             get_youtube(youtube_url)
@@ -115,6 +115,7 @@ def extract_text_from_file(file_path : str) -> str:
     
     file_path = Path(file_path)
     file_extension = file_path.suffix
+    # if file extension in tuple, then 
     if file_extension in (".csv", ".doc", ".docx", ".eml", ".epub", ".gif", ".htm", ".html", ".jpeg", ".jpg", ".json", ".log", ".mp3", ".msg", ".odt", ".ogg", ".pdf", ".png", ".ps", ".psv", ".rtf", ".tab", " tff", ".tif", ".tiff", ".tsv", " .txt", ".wav", ".xls", ".xlsx"):
         text = textract.process(file_path).decode()
     elif file_extension in (".txt", ".md"):

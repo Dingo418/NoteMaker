@@ -119,24 +119,9 @@ python src/main.py -N https://www.youtube.com/watch?v=your_video_id
 python src/main.py -S https://example.com/article
 ```
 
-## Environmental Variable
-
-Make sure your OpenAI API key is set as an environmental variable before running the tool:
-
-```bash
-# For running LLMs hosted by OpenAI (gpt-4, gpt-4o-mini, etc.)
-# Get your OpenAI API key from [https://platform.openai.com/](https://platform.openai.com/)
-
-# Linux/macOS
-export OPENAI_API_KEY=your-api-key-here
-
-# Windows
-set OPENAI_API_KEY=your-api-key-here
-```
-
 ## Notes
 
-- If working with **large files**, the tool splits content into smaller chunks (e.g., paragraphs) for easier processing by GPT models.
+- If working with **large files**, the tool splits content into smaller chunksfor easier processing by GPT models.
 - The final output is saved in markdown format, making it easy to integrate into note-taking systems or documentation.
 
 ## Troubleshooting
