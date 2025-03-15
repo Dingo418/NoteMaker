@@ -50,15 +50,15 @@ def export_md(response : list, output_path : Path) -> None:
 
 def gpt_process(text : str, system_prompt_path : Path) -> list:
     """Sends chunks to the GPT Processes and collates the response"""
-    previous_note_end = "This is the start of a new note." # in the prompt there is a section to continue the note, 
+    previous_note_end = "This is the start of a new note. Ignore the previous sentence." # in the prompt there is a section to continue the note, 
     responses = []                                         # this makes it so it knows it the start of a note
     chunks = split_up(text) # splits up the text into chunks, to improve gpt performance
     
     print(f"Out of {len(chunks)-1}") # finds out how many chunks there is
     for i,chunk in enumerate(chunks):
         responses.append(gpt.getGPT(chunk, system_prompt_path, previous_note_end)) # Adds the GPT response to the responses array
-        previous_note_end = responses[-1][:-20] # gets the last 20 characters of the previous note to pass through, so the gpt knows how to begin
-        print(f"Chunk {i} has been proccessed.")
+        previous_note_end = responses[-1][-40:] # gets the last 40 characters of the previous note to pass through, so the gpt knows how to begin
+        print(f"Chunk {i} has been proccessd.")
 
     return responses
 
@@ -76,7 +76,7 @@ def get_text(file_path : Path) -> str:
     # Checks the suffix of a file, depending on the file suffix it will extract text in different ways
     file_extension = file_path.suffix
     match file_extension:
-        case ".txt":
+        case ".txt" | ".md":
             text = get_text_from_file(file_path)
         case ".wav":
             print("Warning, this may take a while if it is a big file.")
